@@ -8,6 +8,7 @@ const path = require("path");
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false })); // using the body parser that helps to read and transfer the request to the middleware
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/admin", adminRoutes); //accessing the admin
 app.use("/admin", shopRoutes); //acceing shop routes
